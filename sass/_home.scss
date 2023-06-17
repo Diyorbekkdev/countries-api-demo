@@ -240,7 +240,9 @@
   }
 }
 
-
+.closed{
+  display: none !important;
+}
 
 .card__row {
   display: grid;

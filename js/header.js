@@ -1,6 +1,6 @@
 let header = document.querySelector(".header");
 let searchNavBar = document.querySelector('.searchbar')
-
+let bodySearch = document.querySelector('.body-search');
 window.addEventListener("scroll", function () {
   shrink();
 });
@@ -8,10 +8,12 @@ window.addEventListener("scroll", function () {
 function shrink() {
   if (scrollY > 100) {
     header.classList.add("navbar-shrink");
-    searchNavBar.classList.add('view')
+    searchNavBar.classList.add('view');
+    bodySearch.classList.add('closed');
   } else {
     header.classList.remove("navbar-shrink");
-    searchNavBar.classList.remove('view')
+    searchNavBar.classList.remove('view');
+    bodySearch.classList.remove('closed');
   }
 }
 
