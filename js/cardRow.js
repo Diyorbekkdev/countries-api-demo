@@ -122,26 +122,23 @@ function pagination() {
   });
 }
 
-async function getCountries(url) {
-
-  cardRow.innerHTML = `
-  <div id="loading">
-    <div class="spinnerContainer">
-    <div class="spinner"></div>
-    <div class="loader">
-      <p>Diyorbek</p>
-      <div class="words">
-        <span class="word">API</span>
-        <span class="word">Searching</span>
-        <span class="word">Pagination</span>
-        <span class="word">Options</span>
-        <span class="word">Voice command</span>
-      </div>
+cardRow.innerHTML = `
+<div id="loading">
+  <div class="spinnerContainer">
+  <div class="spinner"></div>
+  <div class="loader">
+    <p>Diyorbek</p>
+    <div class="words">
+      <span class="word">API</span>
+      <span class="word">Searching</span>
+      <span class="word">Pagination</span>
+      <span class="word">Options</span>
+      <span class="word">Voice command</span>
     </div>
-   </div>
-  </div>`
-
-
+  </div>
+ </div>
+</div>`;
+async function getCountries(url) {
   let countries = await getData(url);
   cardRow.innerHTML = "";
   countries.map((country)=>{
@@ -155,9 +152,8 @@ getCountries("https://restcountries.com/v3.1/all");
 
 document.getElementById("input").addEventListener("keyup", function (event) {
   let searchQuery = event.target.value.trim();
-  if(searchQuery){
-    getCountries(`https://restcountries.com/v3.1/name/${searchQuery}`);
-  }
+  getCountries(`https://restcountries.com/v3.1/name/${searchQuery}`);
+ 
 });
 
 function changeRegion(region) {
